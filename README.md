@@ -1,4 +1,4 @@
-# YouTubeChannelIDExtractor
+# YouTube Channel ID Extractor
 
 Easily extract YouTube channel IDs directly from video pages with a single button click.
 

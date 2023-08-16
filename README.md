@@ -39,10 +39,6 @@ If you'd like to contribute, please fork the repository and use a feature branch
 
 If you encounter any issues, please file them in the [issues section](https://github.com/syntaxsurge/YouTubeChannelIDExtractor/issues) of the repository.
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
-
 ## Acknowledgments
 
 - All YouTube-related rights, names, and trademarks are the property of their respective owners.

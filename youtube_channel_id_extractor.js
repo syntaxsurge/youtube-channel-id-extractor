@@ -1,3 +1,6 @@
+// Variable to decide whether to include "@" when copying the channel handle.
+const includeAtSymbol = false; // set to false if you don't want to include "@"
+
 /**
  * Extracts the channel ID or handle from a YouTube video or channel page URL.
  *
@@ -19,8 +22,8 @@ function extractChannelFromVideoPage() {
     // Check if the URL contains the pattern indicating a channel page using the '@' handle.
     else if (currentURL.includes('youtube.com/@')) {
         const extracted = currentURL.split('youtube.com/@')[1];
-        // Return the channel handle with '@' prefix.
-        return "@" + extracted.split('/')[0];
+        // Return the channel handle with or without '@' prefix based on `includeAtSymbol`.
+        return includeAtSymbol ? "@" + extracted.split('/')[0] : extracted.split('/')[0];
     }
 
     // If not on a direct channel page, try to extract the channel from the standard YouTube video page structure.
@@ -30,7 +33,9 @@ function extractChannelFromVideoPage() {
         if (channelHref.includes("/channel/")) {
             return channelHref.split("/channel/")[1];
         } else if (channelHref.includes("/@")) {
-            return "@" + channelHref.split("/@")[1];
+            const extractedHandle = channelHref.split("/@")[1];
+            // Return the channel handle with or without '@' prefix based on `includeAtSymbol`.
+            return includeAtSymbol ? "@" + extractedHandle : extractedHandle;
         }
     }
 
@@ -41,7 +46,9 @@ function extractChannelFromVideoPage() {
         if (channelHref.includes("/channel/")) {
             return channelHref.split("/channel/")[1];
         } else if (channelHref.includes("/@")) {
-            return "@" + channelHref.split("/@")[1];
+            const extractedHandle = channelHref.split("/@")[1];
+            // Return the channel handle with or without '@' prefix based on `includeAtSymbol`.
+            return includeAtSymbol ? "@" + extractedHandle : extractedHandle;
         }
     }
 
